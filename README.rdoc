@@ -27,7 +27,7 @@ You can append patterns to the `path_exclude_patterns` setting if there are URLs
 
     # config/application.rb
     config.system_metrics.path_exclude_patterns << /^\/admin/
-    
+
 Adding the `/^\/admin/` exclusion pattern will ensure that no metrics are collected for any path beginning with `/admin`.
 
 == Notification Exclusion Patterns
@@ -70,9 +70,9 @@ Below is a custom instrument for timing Sunspot searches:
 
 This example instrument illustrates three concepts
 
-# It will handle any event whose name ends with sunspot.
-# It will inform SystemMetrics that the event should not be collected if the current user is an administrator.
-# It will add the current user's name to the event payload
+(1) It will handle any event whose name ends with sunspot.
+(2) It will inform SystemMetrics that the event should not be collected if the current user is an administrator.
+(3) It will add the current user's name to the event payload
 
 = Authorization
 
