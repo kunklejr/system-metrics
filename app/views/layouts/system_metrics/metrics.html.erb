@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title><%= title %></title>
+    <%= stylesheet_link_tag 'system_metrics/reset', 
+      'system_metrics/typography',
+      :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'system_metrics/print', :media => 'print' %>
+    <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'system_metrics/ie', :media => 'screen, projection' %>
+    <![endif]-->
+    <%= stylesheet_link_tag 'system_metrics/base', 
+      'system_metrics/app',
+      'system_metrics/header',
+      'system_metrics/footer',
+      'system_metrics/title_bar',
+      'system_metrics/portlet',
+      'system_metrics/payload',
+      'system_metrics/metric',
+      'system_metrics/menu_bar',
+      'system_metrics/graphs',
+      :media => 'screen, projection', :cache => 'system_metrics' %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <%= image_tag 'system_metrics/rings_13.png' %>
+        <h1>System Metrics</h1>
+        <%= render "menu" %>
+      </div>
+      <%= render "title_bar" %>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <span>Developed by <a href="http://www.nearinfinity.com">Near Infinity</a></span>
+      </div>
+    </div>
+  </body>
+</html>

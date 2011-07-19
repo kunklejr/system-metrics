@@ -1,0 +1,52 @@
+#header {
+  color: white;
+  background-color: #6A7176;
+  border-bottom: 1px solid #44484B;
+  padding: 9px 30px;
+  position: relative;
+  text-shadow: 0 1px 0 black;
+  z-index: 900;
+}
+
+#header h1 {
+  color: #CDCDCD;
+  display: inline;
+  font-size: 1.3em;
+  margin-right: 20px;
+}
+
+#header a, #header a:link {
+  color: #CDCDCD;
+}
+
+#header ul#tabs {
+  display: inline;
+  height: 100%;
+}
+
+#header ul#tabs li {
+  display: inline;
+  font-size: 1em;
+  margin-right: 4px;
+  padding: 9px 0;
+  position: relative;
+}
+
+#header ul#tabs li a {
+  padding: 6px 10px 4px;
+  position: relative;
+  text-decoration: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#header ul#tabs li:hover > a {
+  background: #7B8389;
+  color: #FFF;
+}
+
+#header img {
+  position: relative;
+  top: 2px;
+}

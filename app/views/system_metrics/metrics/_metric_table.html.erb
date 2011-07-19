@@ -1,0 +1,25 @@
+<% longest_duration = metrics.first.try(:duration) %>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <% if columns.include?(:name) %><th>Name</th><% end %>
+      <% if columns.include?(:identifier) %><th>Identifier</th><% end %>
+      <% if columns.include?(:action) %><th>Action</th><% end %>
+      <% if columns.include?(:when) %><th>When</th><% end %>
+      <% if columns.include?(:duration) %><th>Duration (ms)</th><% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% for metric in metrics -%>
+      <tr>
+        <td><%= link_to metric.id, metric_path(metric) %>
+        <% if columns.include?(:name) %><td><%= metric.name %></td><% end %>
+        <% if columns.include?(:identifier) %><td><%= identifier(metric) %></td><% end %>
+        <% if columns.include?(:action) %><td><%= metric.action %></td><% end %>
+        <% if columns.include?(:when) %><td><%= distance_of_time_in_words_to_now metric.started_at %> ago</td><% end %>
+        <% if columns.include?(:duration) %><td><span class="hbar<%= metric.duration > slow_threshold(metric) ? ' slow' : '' %>" style="width: <%= metric.duration / longest_duration * 100 %>%"></span><%= metric.duration %></td><% end %>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

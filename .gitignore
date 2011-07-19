@@ -1,0 +1,7 @@
+coverage
+rdoc
+grant-*.gem
+tmp/
+pkg/
+.DS_Store
+Gemfile.lock

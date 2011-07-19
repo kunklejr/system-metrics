@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+}
+
+#content {
+  padding: 20px;
+  background: #FFF;
+}
+
+div.clear {
+  clear: both;
+}
+

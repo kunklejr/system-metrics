@@ -1,0 +1,46 @@
+body {
+  font-size: 72%;
+  line-height: 150%;
+  color: #323537;
+  background: #EFEFEF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #F47721;
+  font-weight: normal;
+}
+
+tbody tr:nth-child(2n) td, tbody tr.even td {
+  background-color: #EFEFEF;
+}
+
+thead th {
+  background-color: #6A7176;
+  color: #CDCDCD;
+}
+
+a {
+  color: #323537;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F47721;
+  text-decoration: underline;
+}
+
+input[type=submit] {
+  background: #EFEFEF;
+  padding: 6px 10px 4px;
+  border: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover {
+  background: #7B8389;
+  color: #FFF;
+  cursor: pointer;
+}
+
