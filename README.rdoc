@@ -55,17 +55,17 @@ Instrument implementations require three methods, #handles?(event), #ignore?(eve
 Below is a custom instrument for timing Sunspot searches:
 
     class SunspotInstrument
-        def handles?(event)
-            event.name =~ /sunspot$/
-        end
-        
-        def ignore?(event)
-            User.current.admin?
-        end
-        
-        def process(event)
-            event.payload[:user] = User.current.name
-        end
+      def handles?(event)
+        event.name =~ /sunspot$/
+      end
+      
+      def ignore?(event)
+        User.current.admin?
+      end
+      
+      def process(event)
+        event.payload[:user] = User.current.name
+      end
     end
 
 This example instrument illustrates three concepts
@@ -80,14 +80,15 @@ There's no authorization built into SystemMetrics, although it should be rather 
 
     # config/initializers/system_metrics_authorization.rb
     module SystemMetricsAuthorization
-        def self.included(base)
-            base.send(:before_filter, :authorize)
-        end
-        
-        def authorize
-            # Do you authorization thing
-        end
+      def self.included(base)
+        base.send(:before_filter, :authorize)
+      end
+      
+      def authorize
+        # Do you authorization thing
+      end
     end
+
     SystemMetrics::MetricsController.send(:include, SystemMetricsAuthorization)
 
 = Caveats
