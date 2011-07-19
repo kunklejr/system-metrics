@@ -1,7 +1,7 @@
 $:.unshift File.expand_path("../lib", __FILE__)
 
 require 'rake'
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'rspec/core/rake_task'
 require 'bundler'
 
@@ -23,7 +23,7 @@ RSpec::Core::RakeTask.new(:rcov) do |t|
 end
 
 desc 'Generate documentation for the gem.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
+RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'System Metrics'
   rdoc.options << '--line-numbers' << '--inline-source'
