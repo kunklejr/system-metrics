@@ -1,5 +1,5 @@
-<% set_title "System Metrics Administration" %>
-<% set_page_title "Administration" %>
+<% set_title "System Metrics Administration" -%>
+<% set_page_title "Administration" -%>
 <div id="menu-bar">
   <%= form_tag "/system/metrics/all", :method => :delete do -%>
     <%= submit_tag 'Delete All' %>
@@ -17,7 +17,7 @@
       <td><%= category.category.titleize %></td>
       <td><%= category.count %></td>
       <td>
-      <%= form_tag "/system/metrics/#{category.category}", :method => :delete do -%>
+      <%= form_tag "/system/metrics/#{category.category}", :method => :delete do %>
         <%= submit_tag 'Delete Category' %>
       <% end -%>
       </td>

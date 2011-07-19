@@ -1,4 +1,4 @@
-<% longest_duration = metrics.first.try(:duration) %>
+<% longest_duration = metrics.first.try(:duration) -%>
 <table>
   <thead>
     <tr>
@@ -12,14 +12,13 @@
   </thead>
   <tbody>
     <% for metric in metrics -%>
-      <tr>
-        <td><%= link_to metric.id, metric_path(metric) %>
-        <% if columns.include?(:name) %><td><%= metric.name %></td><% end %>
-        <% if columns.include?(:identifier) %><td><%= identifier(metric) %></td><% end %>
-        <% if columns.include?(:action) %><td><%= metric.action %></td><% end %>
-        <% if columns.include?(:when) %><td><%= distance_of_time_in_words_to_now metric.started_at %> ago</td><% end %>
-        <% if columns.include?(:duration) %><td><span class="hbar<%= metric.duration > slow_threshold(metric) ? ' slow' : '' %>" style="width: <%= metric.duration / longest_duration * 100 %>%"></span><%= metric.duration %></td><% end %>
-      </tr>
+      <%= render :partial => 'metric_row', :locals => {
+        :indent => 0,
+        :columns => columns,
+        :metric => metric,
+        :longest_duration => longest_duration,
+        :include_children => include_children
+      } %>
     <% end -%>
   </tbody>
 </table>

@@ -3,7 +3,11 @@ module SystemMetrics
     class ActionController < SystemMetrics::Instrument::Base
 
       def initialize
-        super /^process_action\.action_controller$/
+        super /\.action_controller$/
+      end
+
+      def ignore?(event)
+        event.name != 'process_action.action_controller'
       end
 
       def prepare(event)

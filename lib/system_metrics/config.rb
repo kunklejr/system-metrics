@@ -5,7 +5,7 @@ module SystemMetrics
     def initialize
       self.store = SystemMetrics::Store.new
       self.notification_exclude_patterns = []
-      self.path_exclude_patterns = [/system\/metrics/]
+      self.path_exclude_patterns = [/system\/metrics/, /system_metrics/]
       self.instruments = [
         SystemMetrics::Instrument::ActionController.new,
         SystemMetrics::Instrument::ActionView.new,
