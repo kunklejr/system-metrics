@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/spec_helper'
-require 'system_metrics'
 
 describe SystemMetrics do
   it 'should allow setting collection status to off' do

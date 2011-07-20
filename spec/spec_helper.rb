@@ -1,5 +1,6 @@
 require 'rspec'
 require 'rails'
+require 'system_metrics'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

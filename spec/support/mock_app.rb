@@ -6,9 +6,7 @@ class MockApp
   end
 
   class Config
-    def system_metrics
-      @system_metrics ||= {}
-    end
+    attr_accessor :system_metrics
 
     def middleware
       @middleware ||= Middleware.new

@@ -1,6 +1,4 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-require 'system_metrics/middleware'
-require 'system_metrics/collector'
 
 describe SystemMetrics::Middleware do
   before(:each) do

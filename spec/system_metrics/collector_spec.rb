@@ -1,8 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-require 'system_metrics/collector'
 
 describe SystemMetrics::Collector do
-  before(:each) do 
+  before(:each) do
     @store = TestStore.new
     @collector = SystemMetrics::Collector.new(@store)
   end
