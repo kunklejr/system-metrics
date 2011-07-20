@@ -61,12 +61,11 @@ describe SystemMetrics::NestedEvent do
   end
 
   describe '#to_hash' do
-    it 'should return a hash with keys for :name, :started_at, :ended_at, :transaction_id, :payload, :duration, and :exclusive_duration' do
+    it 'should return a hash with keys for :name, :action, :category, :started_at, :transaction_id, :payload, :duration, and :exclusive_duration' do
       e = event
       hash = event.to_hash
       hash[:name].should == e.name
       hash[:started_at].should be_within(1).of(e.started_at)
-      hash[:ended_at].should be_within(1).of(e.ended_at)
       hash[:transaction_id].should == e.transaction_id
       hash[:payload].should == e.payload
       hash[:duration].should be_within(1).of(e.duration)

@@ -2,6 +2,7 @@ require 'active_support/notifications'
 
 module SystemMetrics
   class NestedEvent < ActiveSupport::Notifications::Event
+    attr_reader :action, :category
 
     def self.arrange(events, options={})
       events.sort! { |a, b| a.end <=> b.end } unless options[:presort] == false
@@ -15,6 +16,11 @@ module SystemMetrics
       end
 
       root
+    end
+
+    def initialize(*args)
+      super
+      @action, @category = name.split('.')
     end
 
     def exclusive_duration
@@ -45,8 +51,9 @@ module SystemMetrics
     def to_hash
       {
         :name => name,
+        :action => action,
+        :category => category,
         :started_at => started_at,
-        :ended_at => self.ended_at,
         :transaction_id => transaction_id,
         :payload => payload,
         :duration => duration,

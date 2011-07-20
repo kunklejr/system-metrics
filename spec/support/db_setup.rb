@@ -23,10 +23,13 @@ class CreateMeasurements < ActiveRecord::Migration
   def self.up
     create_table :system_metrics, :force => true do |t|
       t.string :name
+      t.string :action
+      t.string :category
       t.datetime :started_at
       t.string :transaction_id
       t.text :payload
       t.float :duration
+      t.float :exclusive_duration
       t.integer :request_id
       t.integer :parent_id
     end

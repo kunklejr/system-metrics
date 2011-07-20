@@ -1,3 +1,4 @@
+$:.push File.expand_path("../../app/models", __FILE__)
 require 'rspec'
 require 'rails'
 require 'system_metrics'
