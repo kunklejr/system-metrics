@@ -6,7 +6,7 @@ describe SystemMetrics::Middleware do
     @collector = SystemMetrics::Collector.new(@store)
   end
 
-  it 'should invoke the collector for a non-excluded paths' do
+  it 'should invoke the collector for non-excluded paths' do
     event = Object.new
     blk = Proc.new { @collector.collect_event(event) }
     middleware = SystemMetrics::Middleware.new(blk, @collector, [])
