@@ -9,4 +9,14 @@ module NotificationsSupport
     end
   end
 
+  def event(options={})
+    SystemMetrics::NestedEvent.new(
+      options[:name] || 'sql.active_record',
+      options[:start] || (Time.now - 5.seconds),
+      options[:end] || Time.now,
+      options[:transaction_id] || 'tid',
+      options[:payload] || {}
+    )
+  end
+
 end

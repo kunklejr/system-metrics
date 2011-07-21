@@ -41,7 +41,7 @@ module SystemMetrics
       # ignore the event, it should still return true if it generally 
       # handles events like the one passed.
       def handles?(event)
-        event.name =~ pattern
+        (event.name =~ pattern) != nil
       end
 
       # Indicates whether the given event should be completely ingored 

@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 require 'system_metrics/metric'
 
 describe SystemMetrics::Store do
+  include NotificationsSupport
 
   describe '#save' do
     it 'should save an array of events hierarchically' do
@@ -33,16 +34,6 @@ describe SystemMetrics::Store do
   end
 
   private
-
-    def event(options={})
-      SystemMetrics::NestedEvent.new(
-        options[:name] || 'sql.active_record',
-        options[:start] || (Time.now - 5.seconds),
-        options[:end] || Time.now,
-        options[:transaction_id] || 'tid',
-        options[:payload] || {}
-      )
-    end
 
     def verify_equal(event, metric)
       event.name.should == metric.name
