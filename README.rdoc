@@ -74,9 +74,24 @@ This example instrument illustrates three concepts
 (2) It will inform SystemMetrics that the event should not be collected if the current user is an administrator.
 (3) It will add the current user's name to the event payload
 
+= Date/Time Ranges
+
+You can change the time range of metrics shown on the dashboard and category screens using two query parameters; from and to. Consider the following examples:
+
+    Show dashboard metrics from three hours ago until now
+    http://localhost:3000/system/metrics?from=3.hours
+    
+    Show one day of dashboard metrics beginning two days ago
+    http://localhost:3000/system/metrics?from=2.days&to=1.day
+    
+    Show one hour of category metrics ending 30 minutes ago
+    http://localhost:3000/system/metrics/category/active_record?from=90.minutes&to=30.minutes
+
+As you might have guessed, the 'from' and 'to' query parameters take an integer and any valid method added by ActiveSupport::CoreExtensions::Numeric::Time to create a time in the past. The default 'from' time is 30 minutes and 'to' is 0 minutes (current time).
+
 = Authorization
 
-There's no authorization built into SystemMetrics, although it should be rather straightforward to add your own. Consider the following example implementation:
+Since SystemMetrics is not recommended for production use, the lack of authorization is not likely a problem. However, it should be rather straightforward to add your own. Consider the following example implementation:
 
     # config/initializers/system_metrics_authorization.rb
     module SystemMetricsAuthorization
