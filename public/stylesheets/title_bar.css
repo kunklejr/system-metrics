@@ -21,9 +21,6 @@
 
 #title-bar h4 {
   margin-bottom: 0.25em;
-  color: #5E6469;
+  font-weight: normal;
 }
 
-#title-bar h4 a {
-  color: #5E6469;
-}

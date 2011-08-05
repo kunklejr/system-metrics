@@ -25,16 +25,15 @@
   </head>
   <body>
     <div class="container">
-      <div id="header">
-        <%= image_tag 'system_metrics/rings_13.png' %>
+      <div id="hd">
         <h1>System Metrics</h1>
         <%= render "menu" %>
       </div>
       <%= render "title_bar" %>
-      <div id="content">
+      <div id="bd">
         <%= yield %>
       </div>
-      <div id="footer">
+      <div id="ft">
         <span>Developed by <a href="http://www.nearinfinity.com">Near Infinity</a></span>
       </div>
     </div>

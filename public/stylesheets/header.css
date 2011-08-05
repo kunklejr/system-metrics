@@ -1,52 +1,62 @@
-#header {
-  color: white;
-  background-color: #6A7176;
-  border-bottom: 1px solid #44484B;
-  padding: 9px 30px;
-  position: relative;
+#hd {
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 2;
+  background: url("../../images/system_metrics/gradient.png") repeat-x scroll 0 -58px transparent;
+  text-align: right;
+  border-top: 2px solid #F8BC59;
+}
+
+#hd h1 {
+  color: #F8BC59;
+  font-size: 1.8em;
+  position: absolute;
+  top: 10px;
+  left: 20px;
   text-shadow: 0 1px 0 black;
-  z-index: 900;
 }
 
-#header h1 {
-  color: #CDCDCD;
-  display: inline;
-  font-size: 1.3em;
-  margin-right: 20px;
+#hd ul {
+  border: 0 none;
+  clear: both;
+  margin: 0 1.622%;
+  overflow: hidden;
+  padding: 0;
+  text-shadow: 0 1px 0 black;
 }
 
-#header a, #header a:link {
-  color: #CDCDCD;
+#hd ul li {
+  color: #C4D9FF;
+  cursor: pointer;
+  margin: 6px 0.5em 0;
+  padding: 0;
+  display: inline-block;
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+  -moz-box-orient: vertical;
 }
 
-#header ul#tabs {
-  display: inline;
-  height: 100%;
+#hd ul li a {
+  color: inherit;
+  cursor: inherit;
+  line-height: 28px;
+  padding: 0.5em 1em;
+  text-decoration: inherit;
 }
 
-#header ul#tabs li {
-  display: inline;
-  font-size: 1em;
-  margin-right: 4px;
-  padding: 9px 0;
-  position: relative;
+#hd ul li.active {
+  background-color: #323C46;
+  color: #F6A828;
+  -moz-border-radius: 25px 25px 25px 25px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
-#header ul#tabs li a {
-  padding: 6px 10px 4px;
-  position: relative;
-  text-decoration: none;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-#header ul#tabs li:hover > a {
-  background: #7B8389;
-  color: #FFF;
-}
-
-#header img {
-  position: relative;
-  top: 2px;
+#hd ul li:hover {
+  color: #EEE;
 }

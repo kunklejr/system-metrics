@@ -1,6 +1,12 @@
-#footer {
+#ft {
+  background-color: #FAD08A;
+  border-top: 1px solid #F8BC59;
+  color: #B17107;
+  height: 45px;
+  line-height: 44px;
   text-align: center;
-  border-top: 1px solid #CCC;
-  font-size: 85%;
-  min-height: 2em;
+  text-shadow: 0 -1px 0 #FBDAA2;
+  width: 100%;
+  z-index: 2;
+  -moz-box-shadow: 0 1px 0 #FCE3BB inset;
 }

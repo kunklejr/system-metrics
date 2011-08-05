@@ -1,10 +1,19 @@
-.container {
-  width: 100%;
+#container {
+  height: 100%;
+  min-height: 100%;
 }
 
-#content {
+#bd {
   padding: 20px;
-  background: #FFF;
+  background-color: #FAFCFF;
+}
+
+tr {
+  height: 45px;
+}
+
+thead tr {
+  color: #667495;
 }
 
 div.clear {
