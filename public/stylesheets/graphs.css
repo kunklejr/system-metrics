@@ -1,9 +1,0 @@
-.hbar {
-  display: block;
-  background: #0A0;
-  height: 10px;
-}
-
-.hbar.slow {
-  background: #A00;
-}
