@@ -3,7 +3,7 @@ module SystemMetrics
     attr_accessor :store, :instruments, :notification_exclude_patterns, :path_exclude_patterns
 
     def initialize
-      self.store = SystemMetrics::Store.new
+      self.store = SystemMetrics::AsyncStore.new
       self.notification_exclude_patterns = []
       self.path_exclude_patterns = [/system\/metrics/, /system_metrics/]
       self.instruments = [

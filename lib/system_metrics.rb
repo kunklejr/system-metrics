@@ -4,6 +4,7 @@ module SystemMetrics
   autoload :Middleware,     'system_metrics/middleware'
   autoload :NestedEvent,    'system_metrics/nested_event'
   autoload :Store,          'system_metrics/store'
+  autoload :AsyncStore,     'system_metrics/async_store'
   autoload :Version,        'system_metrics/version'
 
   def self.collection_on

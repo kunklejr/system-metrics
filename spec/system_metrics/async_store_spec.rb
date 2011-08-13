@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'system_metrics/metric'
 
-describe SystemMetrics::Store do
+describe SystemMetrics::AsyncStore do
   include NotificationsSupport
 
   describe '#save' do
@@ -10,10 +10,11 @@ describe SystemMetrics::Store do
       child = event(:start => Time.now - 9.seconds, :end => Time.now - 1.seconds)
       grandchild = event(:start => Time.now - 8.seconds, :end => Time.now - 2.seconds)
 
-      store = SystemMetrics::Store.new
+      store = SystemMetrics::AsyncStore.new
 
       lambda {
         store.save([grandchild, child, parent])
+        sleep(0.1)
       }.should change(SystemMetrics::Metric, :count).by(3)
 
       metrics = SystemMetrics::Metric.all
@@ -23,13 +24,13 @@ describe SystemMetrics::Store do
     end
 
     it 'should not attempt to save anything if passed an empty array of events' do
-      store = SystemMetrics::Store.new
-      lambda { store.save([]) }.should_not change(SystemMetrics::Metric, :count)
+      store = SystemMetrics::AsyncStore.new
+      lambda { store.save([]); sleep(0.1) }.should_not change(SystemMetrics::Metric, :count)
     end
 
     it 'should not attempt to save anything if passed a nil' do
-      store = SystemMetrics::Store.new
-      lambda { store.save(nil) }.should_not change(SystemMetrics::Metric, :count)
+      store = SystemMetrics::AsyncStore.new
+      lambda { store.save(nil); sleep(0.1) }.should_not change(SystemMetrics::Metric, :count)
     end
   end
 
