@@ -15,17 +15,21 @@
   </head>
   <body>
     <div class="container">
-      <div id="hd">
-        <h1>System Metrics</h1>
-        <%= render "menu" %>
+      <div id="top">
+        <div id="hd">
+          <h1>System Metrics</h1>
+          <%= render "menu" %>
+        </div>
       </div>
-      <%= render "title_bar" %>
       <div id="bd">
-        <%= yield %>
+        <%= render "title_bar" %>
+        <div id="content">
+          <%= yield %>
+        </div>
       </div>
-      <div id="ft">
-        <span>Developed by <a href="http://www.nearinfinity.com">Near Infinity</a></span>
-      </div>
+    </div>
+    <div id="ft">
+      <span>Developed by <a href="http://www.nearinfinity.com">Near Infinity</a></span>
     </div>
   </body>
 </html>
