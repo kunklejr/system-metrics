@@ -2,6 +2,8 @@
 
 System Metrics is a Rails 3 Engine that provides a clean web interface to the performance metrics instrumented with `ActiveSupport::Notifications`. It'll collect and display the notifications baked into Rails and any additional custom ones you add using `ActiveSupport::Notification#instrument`.
 
+System Metrics is not intended to be a replacement for performance monitoring solutions such as {New Relic}[http://newrelic.com/]. However, it is especially handy for quickly identifying performance problems in a development environment. It's also a great alternative for private networks disconnected from the Internet.
+
 = Installation
 
 To install the System Metrics gem in your Rails 3 app, add the following line to your Gemfile
@@ -16,6 +18,8 @@ You'll then need to move the System Metrics migration into your project and run 
 Lastly, the public assets from the System Metrics gem need to be moved into your app
 
     rails generate system_metrics:install
+
+After the above setup, you can reach the System Metrics interface at /system/metrics within your app.
 
 = Setup
 
@@ -100,7 +104,7 @@ Since SystemMetrics is not recommended for production use, the lack of authoriza
       end
       
       def authorize
-        # Do you authorization thing
+        # Do your authorization thing
       end
     end
 
@@ -108,11 +112,15 @@ Since SystemMetrics is not recommended for production use, the lack of authoriza
 
 = Caveats
 
-I would not currently recommend using SystemMetrics in a production environment. There are far too many synchronous database inserts of the collected metrics to confidently say that it wouldn't impact your application's performance.
+I would not currently recommend using SystemMetrics in a production environment. There are far too many database inserts of the collected metrics to confidently say that it wouldn't impact your application's performance.
+
+= Contributing
+
+System Metrics is a young project and there's still plenty to do. If you're interested in helping out, please take a look at the open issues and follow the steps described for {contributing to a project}[http://help.github.com/fork-a-repo/]. Your help is greatly appreciated.
 
 = Credits
 
-The idea behind System Metrics and the inspiration for a good portion of its code comes from José Valim's Rails Metrics project. The inspiration for the user interface comes from Greg Bell's ActiveAdmin project.
+The idea behind System Metrics and the inspiration for a good portion of its code comes from José Valim's Rails Metrics project.
 
 = License
 
