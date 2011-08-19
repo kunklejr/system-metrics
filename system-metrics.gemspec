@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = SystemMetrics::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jeff Kunkle"]
-  s.homepage    = "https://github.com/nearinfinity/system-metrics"
+  s.homepage    = "http://nearinfinity.github.com/system-metrics"
   s.summary     = "Web interface to Rails 3 performance metrics"
   s.description = "System Metrics is a Rails 3 Engine that provides a clean web interface to the performance metrics instrumented with ActiveSupport::Notifications"
   s.license     = "MIT"
