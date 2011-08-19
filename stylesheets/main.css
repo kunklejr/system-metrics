@@ -104,3 +104,8 @@ img#fork-me {
   border: 0;
 }
 
+img.screenshot {
+  width: 950px;
+  border: 1px solid #C5C5C5;
+  margin-bottom: 20px;
+}

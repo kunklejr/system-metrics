@@ -1,6 +1,6 @@
 ---
 title: System Metrics Documentation
-subtitle: Performance metrics for your Rails 3 app simply by installing a gem
+subtitle: Performance metrics for your Rails 3 app by simply installing a gem
 layout: default
 ---
 System Metrics is not intended to be a replacement for performance monitoring solutions such as [New Relic](http://newrelic.com/). However, it is especially handy for quickly identifying performance problems in a development environment. It's also a great alternative for private networks disconnected from the Internet.
