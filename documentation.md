@@ -150,7 +150,7 @@ System Metrics is a young project and there's still plenty to do. If you're inte
 Credits
 =======
 
-The idea behind System Metrics and the inspiration for a good portion of its code comes from José Valim's Rails Metrics project.
+The idea behind System Metrics and the inspiration and source for a good portion of its code comes from José Valim's Rails Metrics project.
 
 License
 =======
