@@ -152,6 +152,10 @@ Credits
 
 The idea behind System Metrics and the inspiration and source for a good portion of its code comes from José Valim's Rails Metrics project.
 
+Other Documentation
+===================
+System Metrics [release announcement](http://www.nearinfinity.com/blogs/jeff_kunkle/rails_3_performance_monitoring.html).
+
 License
 =======
 
