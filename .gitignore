@@ -6,3 +6,4 @@ pkg/
 .DS_Store
 Gemfile.lock
 _site/
+.vagrant/
